@@ -27,6 +27,9 @@ selected when `entity.format = 'av'` and ` and `file.mimetype.startswith( 'audio
 
 Other templates:
 
+drv-segmentDetail-videoplayer-iaembed.html
+    Legacy VH segment detail page using IA's preconfigured embedded JWplayer component. The solution is simple, but affords little control over interface and branding (e.g., the share and permalink buttons reference the IA page). 
+
 drv-topicDetail.html
     The detail page for a single topic term (`templates/browse/term.html`). It uses the new tabbed "Gallery"/"List" ui pattern that is now the standard results list layout style for DRV. It will also be incorporated in pages like `templates/search/results.html` and `templates/collections/detail.html`
     
