@@ -74,9 +74,7 @@ ddr-densho-1000-400-1 &mdash; Molly Enta Kitajima Interview Segment 1
 <script type="text/javascript" src="assets/plugins/modernizr.min.js"></script>
 
 
-  <script src="https://archive.org/jw/6.8/jwplayer.js"></script>
-  <script>jwplayer.key="sZbikYlI/xtW0U/3Tw1DOdjC1EahhtUCJF5KggVdqDY=";</script>
-
+<!-- wavesufer.js player -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.5/wavesurfer.min.js"></script>
 <!-- wavesurfer.js timeline -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.timeline.min.js"></script>
@@ -238,7 +236,7 @@ ddr-densho-1000-400-1 &mdash; Molly Enta Kitajima Interview Segment 1
         <!-- left content -->
         <div class="col-sm-7 col-md-7">
             <h2>Molly Enta Kitajima Interview Segment 1</h2>
-<!-- wavesurfer.js example -->
+<!-- begin audioplayer -->
 <div id="waveform" style="background-color: #eee;">
     <progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
 </div>
@@ -280,7 +278,7 @@ ddr-densho-1000-400-1 &mdash; Molly Enta Kitajima Interview Segment 1
       })
     });
 
-    wavesurfer.load('https://archive.org/download/densho-csujad-4-test/csub_phi_0001.mp3');
+    wavesurfer.load('https://archive.org/download/ddr-densho-1002-8-1/ddr-densho-1002-8-1-mezzanine-c12eccb33d.mp3');
 </script>
   <div class="controls">
     <button class="btn btn-primary btn-xs" onclick="wavesurfer.skipBackward()">
@@ -306,100 +304,7 @@ ddr-densho-1000-400-1 &mdash; Molly Enta Kitajima Interview Segment 1
       Toggle Mute
     </button>
   </div>
-<!--
-        <div><iframe width="100%" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen src="https://archive.org/embed/densho-csujad-4-test"></iframe>
-        </div>
--->
-
-<!-- 
-<div id="clip">
-</div>
-<script>
-  jwplayer("clip").setup({
-      "playlist": [
-          { 
-              title:"Family background: nearly given to another family for adoption",
-              image:"https://archive.org/download/ddr-densho-1000-400-1/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-1/format=h.264",type:"video/mp4"}]
-          }
-      ],
-      "width":"100%",
-      "height":384,
-  });
-</script>
--->
-
-<!--
-<script>
-  jwplayer("clip").setup({
-      "playlist": [
-          { 
-              title:"Segment 1: Family background: nearly given to another family for adoption",
-              image:"https://archive.org/download/ddr-densho-1000-400-1/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-1/format=h.264",type:"video/mp4"}]
-          },
-          {
-              title:"Segment 2: Father's family background",
-              image:"https://archive.org/download/ddr-densho-1000-400-2/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-2/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 3: Father's early life in Canada",
-              image:"https://archive.org/download/ddr-densho-1000-400-3/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-3/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 4: Description of father's entrepreneurial spirit",
-              image:"https://archive.org/download/ddr-densho-1000-400-4/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-4/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 5: Description of siblings",
-              image:"https://archive.org/download/ddr-densho-1000-400-5/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-5/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 6: A typical day: helping out on family's farm",
-              image:"https://archive.org/download/ddr-densho-1000-400-6/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-6/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 7: Relationship with neighbor farmers",
-              image:"https://archive.org/download/ddr-densho-1000-400-7/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-7/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 8: Attending Japanese language school",
-              image:"https://archive.org/download/ddr-densho-1000-400-8/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-8/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 9: Father leaves family for a time to return to Japan",
-              image:"https://archive.org/download/ddr-densho-1000-400-9/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-9/format=h.264",type:"video/mp4"}]              
-          },
-          {
-              title:"Segment 10: Father returns to Canada and rejoins family",
-              image:"https://archive.org/download/ddr-densho-1000-400-10/format=Thumbnail", 
-              sources:[ {file:"https://archive.org/download/ddr-densho-1000-400-10/format=h.264",type:"video/mp4"}]              
-          }
-
-      ],
-      "width":"100%",
-      "height":384,
-      "listbar":{position:"bottom",size:100,layout:"basic"},
-  });
-</script>
--->
-
-<!-- IA standard embed
-        <div><iframe width="560" height="384"  frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen src="https://archive.org/embed/ddr-densho-1000-400-1"></iframe>
-        </div>
--->
-<!-- single video style
-        <iframe width="100%" height="100%"  frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen src="https://archive.org/download/ddr-densho-1000-400-2/ddr-densho-1000-400-2-mezzanine-6877a9b0c9.mp4"></iframe>
--->
-
+<!-- end audioplayer -->
 
 <!-- tabs style -->
                     <div class="tabs no-margin-top" style="margin:10px 0;">

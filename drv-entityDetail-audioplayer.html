@@ -48,6 +48,11 @@ ddr-densho-151-76 &mdash; Posted exclusion orders
 <!-- Modernizr -->
 <script type="text/javascript" src="assets/plugins/modernizr.min.js"></script>
 
+<!-- wavesufer.js player -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.5/wavesurfer.min.js"></script>
+<!-- wavesurfer.js timeline -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.3/plugin/wavesurfer.timeline.min.js"></script>
+
  <!--[if lt IE 11]>
     
       <style type="text/css">
@@ -203,9 +208,77 @@ ddr-densho-151-76 &mdash; Posted exclusion orders
         <!-- left content -->
         <div class="col-sm-7 col-md-7">
             <h2>Posted exclusion orders</h2>
-            <a href="http://ddr.densho.org/media/ddr-densho-151/ddr-densho-151-76-mezzanine-9ed6c51dd3-a.jpg" class="lightbox img-thumbnail" data-plugin-options="{"type":"image"}">
-                <img src="http://ddr.densho.org/media/cache/0e/f6/0ef6bf7d8ffb17fd47b30fa614e83ba8.jpg" class="img-responsive">
-            </a><br />
+<div id="aplayer-container" style="margin-bottom:15px;">
+<!-- begin audioplayer -->
+<div id="waveform" style="background-color: #eee;">
+    <progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
+</div>
+<div id="waveform-timeline">
+</div>
+<script>
+    var ctx = document.createElement('canvas').getContext('2d');
+    var linGrad = ctx.createLinearGradient(0, 64, 0, 200);
+    linGrad.addColorStop(0.5, 'rgba(255, 255, 255, 1.000)');
+    linGrad.addColorStop(0.5, 'rgba(183, 183, 183, 1.000)');
+    
+    var wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+      // The color can be either a simple CSS color or a Canvas gradient
+      //waveColor: linGrad,
+        waveColor: '#F07057', 
+     //progressColor: 'hsla(200, 100%, 30%, 0.5)',
+        progressColor: '#F07057',
+      //cursorColor: '#fff',
+        cursorColor: '#F07057',
+        scrollParent: 'true',
+        normalize: 'true',
+        backend: 'MediaElement',
+        barHeight: 100,
+        barWidth: 1
+    });
+    
+    wavesurfer.on('loading', function (percents) {
+      document.getElementById('progress').value = percents;
+    });
+
+    wavesurfer.on('ready', function (percents) {
+      document.getElementById('progress').style.display = 'none';
+      var timeline = Object.create(WaveSurfer.Timeline);
+      timeline.init({
+          wavesurfer: wavesurfer,
+          
+          container: '#waveform-timeline'
+      })
+    });
+
+    wavesurfer.load('https://archive.org/download/ddr-densho-1002-8-1/ddr-densho-1002-8-1-mezzanine-c12eccb33d.mp3');
+</script>
+  <div class="controls">
+    <button class="btn btn-primary btn-xs" onclick="wavesurfer.skipBackward()">
+      <i class="fa fa-step-backward"></i>
+      Backward
+    </button>
+
+    <button class="btn btn-primary btn-xs" onclick="wavesurfer.playPause()">
+      <i class="fa fa-play"></i>
+      Play
+      /
+      <i class="fa fa-pause"></i>
+      Pause
+    </button>
+
+    <button class="btn btn-primary btn-xs" onclick="wavesurfer.skipForward()">
+      <i class="fa fa-step-forward"></i>
+      Forward
+    </button>
+
+    <button class="btn btn-primary btn-xs" onclick="wavesurfer.toggleMute()">
+      <i class="fa fa-volume-off"></i>
+      Toggle Mute
+    </button>
+  </div>
+<!-- end audioplayer -->
+</div>
 
 <p>
                                 <a href="" class="btn btn-default btn-xs"><i class="fa fa-download"></i> Download large size</a>
